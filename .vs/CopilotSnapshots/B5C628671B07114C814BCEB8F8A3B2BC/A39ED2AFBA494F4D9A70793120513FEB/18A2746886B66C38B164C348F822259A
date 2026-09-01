@@ -1,0 +1,10 @@
+﻿using APARTMENT_API.DTOs.Request;
+using APARTMENT_API.Models;
+
+namespace APARTMENT_API.Repositories.Interfaces
+{
+    public interface IAuthorizationRepository
+    {
+        Task<User> Login(AuthReqDto req);
+    }
+}

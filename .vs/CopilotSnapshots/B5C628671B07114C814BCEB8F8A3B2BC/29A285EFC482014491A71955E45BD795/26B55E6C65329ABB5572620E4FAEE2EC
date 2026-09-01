@@ -1,0 +1,73 @@
+﻿using APARTMENT_API.DTOs.Request;
+using APARTMENT_API.DTOs.Response;
+using APARTMENT_API.Exceptions;
+using APARTMENT_API.Repositories.Interfaces;
+using APARTMENT_API.Services.Interfaces;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace APARTMENT_API.Services
+{
+    public class AuthorizationService : IAuthorizationService
+    {
+        private readonly IConfiguration _configuration;
+        private readonly IAuthorizationRepository _repositories;
+
+        public AuthorizationService(IConfiguration configuration, IAuthorizationRepository repositories)
+        {
+            _configuration = configuration;
+            _repositories = repositories;
+        }
+
+        private string GenerateJwtToken(AuthReqDto req) 
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, req.Username!),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]!));
+            var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+            var tokeOptions = new JwtSecurityToken(
+                issuer: _configuration["JWT:ValidIssuer"],
+                audience: _configuration["JWT:ValidAudience"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(5),
+                signingCredentials: signinCredentials
+             );
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+            return tokenString;
+        }
+        public async Task<AuthResDto> Login(AuthReqDto req)
+        {
+            var errors = new List<string>();
+            if (string.IsNullOrEmpty(req.Username))
+            {
+                errors.Add("Name Khmer is Require");
+            }
+            if (string.IsNullOrEmpty(req.Password))
+            {
+                errors.Add("Password is require");
+            }
+            if (errors.Count > 0)
+            {
+                throw new BadRequestException(errors);
+            }
+            var data = await _repositories.Login(req);
+            if (data == null)
+            {
+                throw new BadRequestException("Invalid password or username");
+            }
+            return new AuthResDto
+            {
+                Username= data.Username,
+                Email= data.Email,
+                AccessToken = GenerateJwtToken(req)
+            };
+
+        }
+
+    }
+}

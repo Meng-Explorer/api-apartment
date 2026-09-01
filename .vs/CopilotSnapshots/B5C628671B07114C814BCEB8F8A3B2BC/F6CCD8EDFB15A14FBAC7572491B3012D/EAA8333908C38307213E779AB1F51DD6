@@ -1,0 +1,17 @@
+﻿namespace APARTMENT_API.Exceptions
+{
+    public class BadRequestException : Exception
+    {
+        private List<string> errors;
+
+        public BadRequestException(string message) : base(message)
+        { 
+            
+        }
+
+        public BadRequestException(List<string> errors)
+        {
+            this.errors = errors;
+        }
+    }
+}

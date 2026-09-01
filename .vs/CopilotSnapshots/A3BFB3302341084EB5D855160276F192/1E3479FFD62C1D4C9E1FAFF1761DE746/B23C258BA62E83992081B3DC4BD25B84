@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Suppress NU1903 advisory warning temporarily; address package vulnerability with updates when available -->
+    <NoWarn>$(NoWarn);NU1903</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.7.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="2.0.0" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="10.23.26200" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.3" />
+    <!-- Add Microsoft.OpenApi v1.x which contains the expected Microsoft.OpenApi.Models types
+         compatible with Swashbuckle.AspNetCore 6.x. This resolves type-resolution errors for
+         OpenApiInfo, OpenApiSecurityScheme, OpenApiReference, and OpenApiSecurityRequirement. -->
+    <!-- Removed Swashbuckle packages and explicit Microsoft.OpenApi to avoid runtime TypeLoadException
+         caused by mismatched OpenAPI/Swashbuckle assemblies. Re-add or replace with compatible
+         packages (or configure NSwag) when Swagger UI is required. -->
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+</Project>

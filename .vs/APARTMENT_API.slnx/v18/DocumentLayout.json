@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\configurations\\automapperconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\configurations\\automapperconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\controllers\\floorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\controllers\\floorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\services\\interfaces\\ifloorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\services\\interfaces\\ifloorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\repositories\\floorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\repositories\\floorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\repositories\\interfaces\\ifloorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\repositories\\interfaces\\ifloorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\configurations\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\configurations\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\dtos\\response\\floorresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\dtos\\response\\floorresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\dtos\\request\\floorreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\dtos\\request\\floorreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|c:\\users\\asus\\onedrive - build bright university\\documents\\oracle project\\apartment_api\\apartment_api\\models\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7C1159D-9371-0FE3-C5EC-7A1CA709DF5C}|APARTMENT_API\\APARTMENT_API.csproj|solutionrelative:apartment_api\\models\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Program.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Program.cs",
+              "RelativeToolTip": "APARTMENT_API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:53:54.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FloorController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Controllers\\FloorController.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Controllers\\FloorController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Controllers\\FloorController.cs",
+              "RelativeToolTip": "APARTMENT_API\\Controllers\\FloorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:53:08.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IFloorService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Services\\Interfaces\\IFloorService.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Services\\Interfaces\\IFloorService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Services\\Interfaces\\IFloorService.cs",
+              "RelativeToolTip": "APARTMENT_API\\Services\\Interfaces\\IFloorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:52:19.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IFloorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Repositories\\Interfaces\\IFloorRepository.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Repositories\\Interfaces\\IFloorRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Repositories\\Interfaces\\IFloorRepository.cs",
+              "RelativeToolTip": "APARTMENT_API\\Repositories\\Interfaces\\IFloorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:51:51.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Configurations\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Configurations\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Configurations\\ApplicationDbContext.cs",
+              "RelativeToolTip": "APARTMENT_API\\Configurations\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:49:18.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoMapperConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Configurations\\AutoMapperConfiguration.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Configurations\\AutoMapperConfiguration.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Configurations\\AutoMapperConfiguration.cs",
+              "RelativeToolTip": "APARTMENT_API\\Configurations\\AutoMapperConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:49:15.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FloorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Repositories\\FloorRepository.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Repositories\\FloorRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Repositories\\FloorRepository.cs",
+              "RelativeToolTip": "APARTMENT_API\\Repositories\\FloorRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T10:59:07.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FloorResDto.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\DTOs\\Response\\FloorResDto.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\DTOs\\Response\\FloorResDto.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\DTOs\\Response\\FloorResDto.cs",
+              "RelativeToolTip": "APARTMENT_API\\DTOs\\Response\\FloorResDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:48:56.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FloorReqDto.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\DTOs\\Request\\FloorReqDto.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\DTOs\\Request\\FloorReqDto.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\DTOs\\Request\\FloorReqDto.cs",
+              "RelativeToolTip": "APARTMENT_API\\DTOs\\Request\\FloorReqDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:48:52.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Floor.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Models\\Floor.cs",
+              "RelativeDocumentMoniker": "APARTMENT_API\\Models\\Floor.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\Models\\Floor.cs",
+              "RelativeToolTip": "APARTMENT_API\\Models\\Floor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T07:48:11.341Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
