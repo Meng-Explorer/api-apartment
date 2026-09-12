@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.Backup.tmp
+appsettings*.json
+wwwroot/uploads/
