@@ -1,0 +1,239 @@
+[
+  {
+    "ContainingType": "APARTMENT_API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authReq",
+        "Type": "APARTMENT_API.DTOs.Request.AuthReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "GetBuilding",
+    "RelativePath": "api/Building",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "Post",
+    "RelativePath": "api/Building",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "buildingDto",
+        "Type": "APARTMENT_API.DTOs.Request.BuildingReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "GetBuilding",
+    "RelativePath": "api/Building/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "Put",
+    "RelativePath": "api/Building/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "buildingDto",
+        "Type": "APARTMENT_API.DTOs.Request.BuildingReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "Delete",
+    "RelativePath": "api/Building/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.BuildingController",
+    "Method": "GetAllBuilding",
+    "RelativePath": "api/Building/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "GetFloorAsynce",
+    "RelativePath": "api/Floor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "Post",
+    "RelativePath": "api/Floor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "floorReqDto",
+        "Type": "APARTMENT_API.DTOs.Request.FloorReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "GetFloorByIdAsynce",
+    "RelativePath": "api/Floor/{floorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "floorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "Put",
+    "RelativePath": "api/Floor/{floorId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "floorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "floorReqDto",
+        "Type": "APARTMENT_API.DTOs.Request.FloorReqDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "Delete",
+    "RelativePath": "api/Floor/{floorId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "floorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.FloorController",
+    "Method": "GetAllFloorAsynce",
+    "RelativePath": "api/Floor/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APARTMENT_API.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APARTMENT_API.WeatherForecast, APARTMENT_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

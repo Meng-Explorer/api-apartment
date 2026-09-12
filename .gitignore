@@ -1,8 +1,178 @@
-bin/
-obj/
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options
 .vs/
-*.user
+.vscode/
+
+# Visual Studio Code
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.rsuser
 *.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# Local History for Visual Studio
+.localhistory/
+
+# BeatPulse healthcheck temp database
+healthchecksdb
+
+# Backup & swap files
+*.bak
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Package lock files
+packages.lock.json
+
+# Entity Framework migrations folder (optional - uncomment if you want to regenerate)
+# Migrations/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Application logs
+*.log
+
+# IDE
+.vscode/
+.vs/
+*.sln.docstates
+
+# Temporary files
+*.tmp
+*.temp
+
+# NPM (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python (if used)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Azure artifacts
+.azure/
+
+# Settings
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+
+# Secrets
+secrets.json
+secrets.*.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated files
+generated/
 *.Backup.tmp
 appsettings*.json
 wwwroot/uploads/
