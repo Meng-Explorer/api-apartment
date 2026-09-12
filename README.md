@@ -1,236 +1,155 @@
 # APARTMENT_API
 
-A .NET 10 Web API for managing apartment buildings and their floors. This project provides RESTful endpoints for authentication, building management, and floor management with JWT-based security.
+A .NET 10 Web API for apartment building administration. The API provides JWT authentication and management endpoints for users, roles, permissions, buildings, floors, and guests.
 
-## 📋 Table of Contents
+## Features
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Project Structure](#project-structure)
-- [Database](#database)
-- [Authentication](#authentication)
-- [Contributing](#contributing)
-- [License](#license)
+- JWT bearer authentication
+- User, role, permission, and role-permission management
+- Building, floor, and guest management
+- Oracle persistence with Entity Framework Core
+- NSwag OpenAPI and Swagger UI documentation
+- Repository and service layers
+- AutoMapper-based DTO mapping
+- Centralized exception handling
+- Static file support for uploaded content
 
-## ✨ Features
+## Technology
 
-- **User Authentication**: JWT-based authentication system
-- **Building Management**: Create, read, update, and delete building information
-- **Floor Management**: Manage floors within buildings with bilingual support (English and Khmer)
-- **OpenAPI/Swagger Documentation**: Interactive API documentation
-- **Centralized Exception Handling**: Middleware-based error handling
-- **Data Transfer Objects (DTOs)**: Separation of request/response models
-- **Repository Pattern**: Clean data access layer
-- **AutoMapper**: Automatic model mapping between entities and DTOs
-- **Entity Framework Core**: ORM for database operations with Oracle
+- .NET 10
+- ASP.NET Core Web API
+- Oracle Database
+- Entity Framework Core 10
+- Oracle.EntityFrameworkCore
+- NSwag
+- AutoMapper
+- Newtonsoft.Json
 
-## 🛠️ Tech Stack
+## Prerequisites
 
-- **.NET Framework**: .NET 10.0
-- **Database**: Oracle Database
-- **Authentication**: JWT Bearer Tokens
-- **ORM**: Entity Framework Core 10.0.9
-- **API Documentation**: NSwag 14.7.1 & Scalar
-- **Dependency Injection**: Built-in Microsoft DI Container
-- **Mapping**: AutoMapper 12.0.1
-- **JSON Serialization**: Newtonsoft.Json 13.0.4
-
-## 📦 Prerequisites
-
-- .NET 10.0 SDK or later
-- Oracle Database (or compatible)
-- Visual Studio 2022 / Visual Studio Code
+- .NET 10 SDK or later
+- Oracle Database 10g or later, or a compatible Oracle instance
 - Git
+- Optional: `dotnet-ef` for creating and applying migrations
 
-## 🚀 Installation
+## Getting Started
 
-1. **Clone the repository**
+Clone the repository and enter the project directory:
 
-   ```bash
-   git clone https://github.com/yourusername/APARTMENT_API.git
-   cd APARTMENT_API
-   ```
-
-2. **Restore dependencies**
-
-   ```bash
-   dotnet restore
-   ```
-
-3. **Apply migrations**
-   ```bash
-   dotnet ef database update
-   ```
-
-## ⚙️ Configuration
-
-### Database Connection
-
-Update the connection string in `appsettings.json`:
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=3333))(CONNECT_DATA=(SID=xe)));User Id=demo_usr;Password=123;"
-  }
-}
+```bash
+git clone https://github.com/Meng-Explorer/api-apartment.git
+cd api-apartment
 ```
 
-### JWT Configuration
+Restore dependencies and build the project:
 
-Configure JWT settings in `appsettings.json`:
-
-```json
-{
-  "JWT": {
-    "ValidAudience": "http://localhost:5191",
-    "ValidIssuer": "http://localhost:5191",
-    "Secret": "MySuperSecretKey123456789bbu123456789"
-  }
-}
+```bash
+dotnet restore
+dotnet build
 ```
 
-**⚠️ Security Note**: Change the JWT secret key in production and use secure configuration management (Azure Key Vault, AWS Secrets Manager, etc.).
+## Configuration
 
-### Development Configuration
+The local `appsettings*.json` files are intentionally excluded from Git because they can contain database credentials and JWT signing keys. Create a local `appsettings.Development.json` or use environment variables.
 
-For development-specific settings, modify `appsettings.Development.json`:
+The application requires these settings:
 
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  }
-}
+```text
+ConnectionStrings__DefaultConnection=<oracle-connection-string>
+JWT__ValidIssuer=https://localhost:5191
+JWT__ValidAudience=https://localhost:5191
+JWT__Secret=<long-random-signing-key>
 ```
 
-## 🏃 Running the Application
+PowerShell example:
 
-### Using .NET CLI
+```powershell
+$env:ConnectionStrings__DefaultConnection = "<oracle-connection-string>"
+$env:JWT__ValidIssuer = "https://localhost:5191"
+$env:JWT__ValidAudience = "https://localhost:5191"
+$env:JWT__Secret = "<long-random-signing-key>"
+```
+
+Never commit real passwords, API keys, or JWT secrets. Use environment variables, .NET user secrets, or a managed secret store for local and production deployments.
+
+## Database Migrations
+
+Install the Entity Framework Core CLI if it is not already available:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Apply the existing migrations:
+
+```bash
+dotnet ef database update
+```
+
+Create a new migration when the data model changes:
+
+```bash
+dotnet ef migrations add <MigrationName>
+dotnet ef database update
+```
+
+## Running the API
+
+Run the application with:
 
 ```bash
 dotnet run
 ```
 
-The application will start on `https://localhost:5191` by default.
+The development launch profile uses the URLs defined in `Properties/launchSettings.json`.
 
-### Using Visual Studio
+## API Documentation
 
-1. Open `APARTMENT_API.slnx` in Visual Studio
-2. Press `F5` to start debugging
-3. The application will open in your default browser
+When the application is running, open:
 
-### Using Visual Studio Code
+- Swagger UI: `https://localhost:5191/swagger`
+- OpenAPI JSON: `https://localhost:5191/swagger/v1/swagger.json`
 
-```bash
-dotnet watch run
-```
+The exact port can vary by launch profile. Check the console output or `Properties/launchSettings.json` if these URLs are unavailable.
 
-## 📖 API Documentation
+## Project Structure
 
-Once the application is running, access the interactive API documentation:
-
-- **Swagger UI**: `https://localhost:5191/swagger`
-- **Scalar UI**: `https://localhost:5191/scalar`
-- **OpenAPI JSON**: `https://localhost:5191/openapi/v1.json`
-
-## 📁 Project Structure
-
-```
+```text
 APARTMENT_API/
-├── Controllers/              # API endpoint definitions
-│   ├── AuthController.cs
-│   ├── BuildingController.cs
-│   ├── FloorController.cs
-│   └── WeatherForecastController.cs
-├── Models/                   # Entity models
-│   ├── Building.cs
-│   ├── Floor.cs
-│   └── User.cs
-├── DTOs/                     # Data Transfer Objects
-│   ├── Request/
-│   │   ├── AuthReqDto.cs
-│   │   ├── BuildingReqDto.cs
-│   │   └── FloorReqDto.cs
-│   └── Response/
-│       ├── AuthResDto.cs
-│       ├── BuildingResDto.cs
-│       └── FloorResDto.cs
-├── Services/                 # Business logic
-│   ├── Interfaces/
-│   └── AuthorizationService.cs, BuildingService.cs, FloorService.cs
-├── Repositories/             # Data access layer
-│   ├── Interfaces/
-│   └── AuthorizationRepository.cs, BuildingRepository.cs, FloorRepository.cs
-├── Configurations/           # Setup and configuration
-│   ├── ApplicationDbContext.cs
-│   └── AutoMapperConfiguration.cs
-├── Middlewares/              # Custom middleware
-│   └── ExceptionMiddleware.cs
-├── Exceptions/               # Custom exception classes
-├── Helpers/                  # Utility classes
-├── Migrations/               # EF Core migrations
-├── Program.cs               # Application startup configuration
-├── appsettings.json         # Configuration settings
-└── APARTMENT_API.csproj     # Project file
+├── Configurations/       Database context and AutoMapper setup
+├── Controllers/          API controllers
+├── DTOs/                 Request and response DTOs
+├── Exceptions/           Application exception types
+├── Helpers/              API response and query helpers
+├── Middlewares/          Exception handling middleware
+├── Migrations/           Entity Framework Core migrations
+├── Models/               Entity models
+├── Repositories/         Data access implementations and interfaces
+├── Services/             Business logic implementations and interfaces
+├── Properties/           Launch settings
+├── Program.cs            Application startup and middleware configuration
+└── APARTMENT_API.csproj  Project file
 ```
 
-## 🗄️ Database
+Current controllers include buildings, floors, guests, users, roles, permissions, role permissions, and user roles.
 
-### Models
+## Authentication
 
-The application manages the following entities:
+Obtain a JWT through the user authentication endpoint, then send it with protected requests:
 
-- **User**: User accounts for authentication
-- **Building**: Apartment buildings (supports bilingual names: English and Khmer)
-- **Floor**: Floors within buildings
-
-### Migrations
-
-Database migrations are located in the `Migrations/` folder. To create a new migration:
-
-```bash
-dotnet ef migrations add MigrationName
-dotnet ef database update
+```http
+Authorization: Bearer <jwt-token>
 ```
 
-## 🔐 Authentication
+The OpenAPI documentation describes the available endpoints and authorization requirements.
 
-The API uses JWT (JSON Web Tokens) for authentication:
+## Contributing
 
-1. Call the authentication endpoint with credentials
-2. Receive a JWT token in the response
-3. Include the token in the `Authorization` header for protected endpoints:
-   ```
-   Authorization: Bearer <your_jwt_token>
-   ```
+1. Create a feature branch.
+2. Make focused changes and add tests where applicable.
+3. Run `dotnet build` before opening a pull request.
+4. Open a pull request with a description of the change.
 
-Protected endpoints require the `[Authorize]` attribute.
+## License
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📞 Support
-
-For issues, questions, or suggestions, please open an issue on GitHub.
-
----
-
-**Last Updated**: September 2026
+No license file is currently included in this repository. Add a license before distributing the project under specific open-source terms.
