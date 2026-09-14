@@ -41,6 +41,8 @@ builder.Services.AddScoped<IGuestRepository, GuestRepository>();
 builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<PasswordHasher<ApplicationUser>>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IPermissionService, PermissionService>();
+builder.Services.AddScoped<IRolePermissionService, RolePermissionService>();
 
 builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IBuildingService, BuildingService>();

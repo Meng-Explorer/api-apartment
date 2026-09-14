@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj": {}
+    "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj": {
+    "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
         "projectName": "APARTMENT_API",
-        "projectPath": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
+        "projectPath": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

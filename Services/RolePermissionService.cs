@@ -20,17 +20,32 @@ namespace APARTMENT_API.Services
             _permissionRepository = permissionRepository;
             _roleRepository = roleRepository;
         }
+        //public async Task<RolePermissionsResDto?> GetRolesPermissionsAsync(int roleId)
+        //{
+        //    var role = await _roleRepository.GetByIdAsync(roleId);
+        //    if (role == null)
+        //        throw new NotFoundException("Role Not Found");
+        //    var permissions = await _repository.GetRolePermissionsAsync(roleId);
+        //    return new RolePermissionsResDto
+        //    {
+        //        RoleId = role.Id,
+        //        RoleName = role.Name,
+        //        Permissions = _mapper.Map<List<PermissionResDto>>(permissions)
+        //    };
+        //}
         public async Task<RolePermissionsResDto?> GetRolesPermissionsAsync(int roleId)
         {
             var role = await _roleRepository.GetByIdAsync(roleId);
             if (role == null)
                 throw new NotFoundException("Role Not Found");
-            var permissions = await _repository.GetRolePermissionsAsync(roleId);
+            var rolePermissions = await _repository.GetRolePermissionsAsync(roleId);
+            var actualPermissions = rolePermissions.Select(rp => rp.Permission).ToList();
+
             return new RolePermissionsResDto
             {
                 RoleId = role.Id,
                 RoleName = role.Name,
-                Permissions = _mapper.Map<List<PermissionResDto>>(permissions)
+                Permissions = _mapper.Map<List<PermissionResDto>>(actualPermissions)
             };
         }
 

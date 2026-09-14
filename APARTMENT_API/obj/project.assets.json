@@ -3390,11 +3390,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
       "projectName": "APARTMENT_API",
-      "projectPath": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
+      "projectPath": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Documents\\APARTMENT_API\\APARTMENT_API\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\OneDrive - Build Bright University\\Documents\\Oracle Project\\APARTMENT_API\\APARTMENT_API\\APARTMENT_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3923,13 +3923,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

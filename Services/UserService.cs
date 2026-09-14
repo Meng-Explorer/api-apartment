@@ -23,13 +23,15 @@ namespace APARTMENT_API.Services
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IConfiguration _configuration;
         private readonly PasswordHasher<ApplicationUser> _passwordHasher;
+        private readonly ILogger<UserService> _logger;
 
         public UserService(
             IUserRepository repository,
             IMapper mapper,
             IUserRoleRepository userRoleRepository,
             IConfiguration configuration,
-            PasswordHasher<ApplicationUser> passwordHasher
+            PasswordHasher<ApplicationUser> passwordHasher,
+            ILogger<UserService> logger
             )
         {
             _repository = repository;
@@ -37,6 +39,7 @@ namespace APARTMENT_API.Services
             _userRoleRepository = userRoleRepository;
             _configuration = configuration;
             _passwordHasher = passwordHasher;
+            _logger = logger;
 
         }
         public async Task<PageResult<UserResDto>> GetUsersByPageAsync(int page = 1, int pageSize = 10)
@@ -173,7 +176,8 @@ namespace APARTMENT_API.Services
             if (request.Provider.ToLower() == "google")
             {
                 var payload = await VerifyGoogleToken(request.IdToken);
-                if (payload == null) throw new BadRequestException("Invalid Google Token");
+                if (payload == null || string.IsNullOrEmpty(payload.Email))
+                    throw new BadRequestException("Invalid Google Token or Email not provided");
 
                 email = payload.Email;
                 fullName = payload.Name;
@@ -198,6 +202,9 @@ namespace APARTMENT_API.Services
             {
                 throw new BadRequestException("Invalid Provider");
             }
+
+            // Normalize so lookup and storage always agree (repository lookups compare on Trim().ToLowerInvariant())
+            email = email.Trim().ToLowerInvariant();
 
             // ២. check Email from Database that have or not
             var user = await _repository.GetUserByEmailAsync(email);
@@ -252,8 +259,9 @@ namespace APARTMENT_API.Services
                 };
                 return await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
             }
-            catch
+            catch (Exception ex)
             {
+                _logger.LogWarning(ex, "Google token validation failed");
                 return null;
             }
         }
@@ -262,6 +270,27 @@ namespace APARTMENT_API.Services
             try
             {
                 using var httpClient = new HttpClient();
+                var appId = _configuration["Authentication:Facebook:AppId"];
+                var appSecret = _configuration["Authentication:Facebook:AppSecret"];
+
+                // Verify the token was issued for this app before trusting it (Graph API debug_token)
+                var appAccessToken = $"{appId}|{appSecret}";
+                var debugTokenEndPoint = $"https://graph.facebook.com/debug_token?input_token={accessToken}&access_token={appAccessToken}";
+                var debugResponse = await httpClient.GetAsync(debugTokenEndPoint);
+                if (!debugResponse.IsSuccessStatusCode)
+                {
+                    _logger.LogWarning("Facebook debug_token call failed with status {StatusCode}", debugResponse.StatusCode);
+                    return null;
+                }
+
+                var debugContent = await debugResponse.Content.ReadAsStringAsync();
+                var debugResult = JsonConvert.DeserializeObject<FacebookDebugTokenResponse>(debugContent);
+                if (debugResult?.Data == null || !debugResult.Data.IsValid || debugResult.Data.AppId != appId)
+                {
+                    _logger.LogWarning("Facebook token is invalid or was issued for a different app");
+                    return null;
+                }
+
                 // Call Graph API of Facebook fetch data
                 var verifyTokenEndPoint = $"https://graph.facebook.com/me?fields=id,email,name&access_token={accessToken}";
                 var response = await httpClient.GetAsync(verifyTokenEndPoint);
@@ -273,8 +302,9 @@ namespace APARTMENT_API.Services
                 }
                 return null;
             }
-            catch
+            catch (Exception ex)
             {
+                _logger.LogWarning(ex, "Facebook token validation failed");
                 return null;
             }
         }
@@ -308,12 +338,13 @@ namespace APARTMENT_API.Services
                     Email = principal.FindFirstValue(ClaimTypes.Email) ?? principal.FindFirstValue("email") ?? "",
                 };
             }
-            catch
+            catch (Exception ex)
             {
+                _logger.LogWarning(ex, "Apple token validation failed");
                 return null;
             }
         }
-       
+
     }
     // Must be out of Class Parent cause easy for control
     // Class Help for Deserialize Data from Facebook Graph API
@@ -324,7 +355,22 @@ namespace APARTMENT_API.Services
         public string Name { get; set; } = string.Empty;
     }
 
-    // For Apple 
+    // For Facebook debug_token response (used to verify the token was issued for our app)
+    public class FacebookDebugTokenResponse
+    {
+        [JsonProperty("data")]
+        public FacebookDebugTokenData? Data { get; set; }
+    }
+
+    public class FacebookDebugTokenData
+    {
+        [JsonProperty("app_id")]
+        public string AppId { get; set; } = string.Empty;
+        [JsonProperty("is_valid")]
+        public bool IsValid { get; set; }
+    }
+
+    // For Apple
     public class AppleTokenValidationResult
     {
         public string Email { get; set; } = string.Empty;

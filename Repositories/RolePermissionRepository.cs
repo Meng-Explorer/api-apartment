@@ -18,32 +18,35 @@ namespace APARTMENT_API.Repositories
             return await _context.TblAppRolePermission
                 .AsNoTracking()
                 .Where(x => x.RoleId == roleId)
-                .Include(x => x.PermissionId) // if u wanna show data Permission detail
+                .Include(x => x.Permission)
                 .ToListAsync();
         }
 
-        public async Task<ApplicationRolePermission?> GetRolePermissionAsync(int roleId,int permissionId)
+        public async Task<ApplicationRolePermission?> GetRolePermissionAsync(int roleId, int permissionId)
         {
             return await _context.TblAppRolePermission
                 .FirstOrDefaultAsync(x => x.RoleId == roleId && x.PermissionId == permissionId);
         }
+
         public async Task<List<ApplicationRolePermission>> GetRolePermissionEntitiesAsync(int roleId)
         {
             return await _context.TblAppRolePermission
                 .Where(x => x.RoleId == roleId)
                 .ToListAsync();
         }
-        public async Task<bool> HasPermissionAsync(int roleId,int permissionId)
+
+        public async Task<bool> HasPermissionAsync(int roleId, int permissionId)
         {
+            
             return await _context.TblAppRolePermission
-                //.CountAsync(x => x.UserId == userId && x.RoleId == roleId) > 0;
-                .AnyAsync(x => x.RoleId == roleId && x.PermissionId == permissionId);
+                .CountAsync(x => x.RoleId == roleId && x.PermissionId == permissionId) > 0;
         }
 
         public async Task AddRolePermissionAsync(ApplicationRolePermission rolePermission)
         {
             await _context.TblAppRolePermission.AddAsync(rolePermission);
         }
+
         public async Task AddRolePermissionsAsync(IEnumerable<ApplicationRolePermission> rolePermissions)
         {
             await _context.TblAppRolePermission.AddRangeAsync(rolePermissions);

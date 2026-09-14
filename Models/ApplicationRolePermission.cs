@@ -15,6 +15,6 @@ namespace APARTMENT_API.Models
         [Column("PERMISSIONID")]
         public int PermissionId { get; set; }
         [ForeignKey("PermissionId")]
-        public ApplicationRolePermission RolePermission { get; set; } = null!;
+        public ApplicationPermission Permission { get; set; } = null!;
     }
 }

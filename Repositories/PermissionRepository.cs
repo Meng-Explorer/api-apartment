@@ -12,6 +12,7 @@ namespace APARTMENT_API.Repositories
         {
             _context = context;
         }
+
         public async Task<List<ApplicationPermission>> GetAllAsync()
         {
             return await _context.TblAppPermission
@@ -34,25 +35,21 @@ namespace APARTMENT_API.Repositories
 
         public async Task<bool> ExistsByNameAsync(string name)
         {
-            // Using AnyAsync Fast Than CountAsync
             return await _context.TblAppPermission
-                //.CountAsync(x => x.Name == name) > 0;
-                .AnyAsync(x => x.Name == name);
+                .CountAsync(x => x.Name == name) > 0;
         }
 
         public async Task<bool> ExistsByNameAsync(string name, int excludeId)
         {
             return await _context.TblAppPermission
-                //.CountAsync(x => x.Name == name && x.Id != excludeId) > 0;
-                .AnyAsync(x => x.Name == name && x.Id != excludeId);
+                .CountAsync(x => x.Name == name && x.Id != excludeId) > 0;
         }
 
         public async Task AddAsync(ApplicationPermission permission)
         {
             await _context.TblAppPermission.AddAsync(permission);
         }
-
-        public async void Update(ApplicationPermission permission)
+        public void Update(ApplicationPermission permission)
         {
             _context.TblAppPermission.Update(permission);
         }
@@ -65,15 +62,12 @@ namespace APARTMENT_API.Repositories
         public async Task<bool> HasRolesAsync(int permissionId)
         {
             return await _context.TblAppRolePermission
-                //.CountAsync(x => x.PermissionId == PermissionId) > 0;
-                .AnyAsync(x => x.PermissionId == permissionId);
+                .CountAsync(x => x.PermissionId == permissionId) > 0;
         }
 
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
         }
-
     }
 }
-
